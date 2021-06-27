@@ -1,0 +1,1390 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/ontomarket/"
+     xml:base="http://purl.org/ontomarket/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:unit="http://qudt.org/vocab/unit/"
+     xmlns:schema="http://schema.org/"
+     xmlns:ontomkt="http://purl.org/ontomarket/">
+    <owl:Ontology rdf:about="http://purl.org/ontomarket/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontomarket/address -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/address">
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Party"/>
+        <rdfs:range rdf:resource="http://schema.org/PostalAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/attendedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/attendedBy">
+        <owl:inverseOf rdf:resource="http://purl.org/ontomarket/attends"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Customer"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/Seller"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/attends -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/attends"/>
+    
+
+
+    <!-- http://purl.org/ontomarket/boughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/boughtBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Order"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/bundle -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/bundle">
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/Bundle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/bundleQuantity -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/bundleQuantity">
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Bundle"/>
+        <rdfs:range rdf:resource="http://schema.org/QuantitativeValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/cgo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/cgo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Order"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/Cgo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/member -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/member">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ontomarket/memberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/memberOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Seller"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/offeredIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/offeredIn">
+        <owl:inverseOf rdf:resource="http://purl.org/ontomarket/product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/orderItem -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/orderItem">
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Order"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/parent -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/parent">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Family"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Group"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Line"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/SubGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Department"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Family"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Group"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Line"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/product -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/product">
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Bundle"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/profitMargin -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/profitMargin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Order"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/OrderItem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/QuantitativeValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/profitability -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/profitability">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Order"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/OrderItem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/MonetaryAmount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/requestedQuantity -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/requestedQuantity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Order"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/OrderItem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/QuantitativeValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/requestedTotal -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/requestedTotal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Order"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/OrderItem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/MonetaryAmount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/servedQuantity -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/servedQuantity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Order"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/OrderItem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/QuantitativeValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/servedTotal -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/servedTotal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Order"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/OrderItem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/MonetaryAmount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/soldBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/soldBy">
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Order"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/Seller"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/status -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/status">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Order"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/subGroup -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/subGroup">
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Product"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/supplied -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/supplied">
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Product"/>
+        <rdfs:range rdf:resource="http://purl.org/ontomarket/Supplier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/weight -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontomarket/weight">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Order"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/OrderItem"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/QuantitativeValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/unit -->
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/unit">
+        <owl:equivalentProperty rdf:resource="http://schema.org/unitCode"/>
+        <rdfs:domain rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/currency -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/currency">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/unit"/>
+        <rdfs:domain rdf:resource="http://schema.org/MonetaryAmount"/>
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/unitCode -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/unitCode">
+        <rdfs:domain rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/member -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontomarket/cnpj -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontomarket/cnpj">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontomarket/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/cpf -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontomarket/cpf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontomarket/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/filial -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontomarket/filial">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontomarket/identifier">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/legalName -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontomarket/legalName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/orderDate -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontomarket/orderDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/orderItemNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontomarket/orderItemNumber">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontomarket/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontomarket/orderNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontomarket/orderNumber">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontomarket/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontomarket/Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/conversionMultiplier -->
+
+    <owl:DatatypeProperty rdf:about="http://qudt.org/schema/qudt/conversionMultiplier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/symbol -->
+
+    <owl:DatatypeProperty rdf:about="http://qudt.org/schema/qudt/symbol">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/uneceCommonCode -->
+
+    <owl:DatatypeProperty rdf:about="http://qudt.org/schema/qudt/uneceCommonCode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/addressLocality -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/addressLocality">
+        <rdfs:domain rdf:resource="http://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/addressRegion -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/addressRegion">
+        <rdfs:domain rdf:resource="http://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/description -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/description">
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/identifier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/name -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/name">
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/name"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/postOfficeBoxNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/postOfficeBoxNumber">
+        <rdfs:domain rdf:resource="http://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/postalCode -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/postalCode">
+        <rdfs:domain rdf:resource="http://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/streetAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/streetAddress">
+        <rdfs:domain rdf:resource="http://schema.org/PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/value -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/value">
+        <rdfs:domain rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/nick -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/nick">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontomarket/Bundle -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Bundle">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/bundleQuantity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/product"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ontomarket/Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/product"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Cgo"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Department"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Family"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Group"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Line"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Order"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Cgo -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Cgo">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Department"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Family"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Group"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Line"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Order"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Customer -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Customer">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/attendedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ontomarket/Seller"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Supplier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Department -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Department">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Family"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Group"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Line"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Order"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Entity -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Entity">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/identifier"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Family -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Family">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/parent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ontomarket/Line"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Group"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Line"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Order"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Group -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Group">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/parent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ontomarket/Family"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Line"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Order"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Line -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Line">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/parent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ontomarket/Department"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Order"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Order -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Order">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/boughtBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/cgo"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/orderItem"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/profitMargin"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/profitability"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/requestedQuantity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/servedQuantity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/soldBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/status"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/weight"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/boughtBy"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ontomarket/Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/soldBy"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ontomarket/Seller"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/requestedTotal"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/servedTotal"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/orderDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/orderNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderItem"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/OrderItem -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/OrderItem">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/profitMargin"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/profitability"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/requestedQuantity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/servedQuantity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/weight"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/bundle"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/requestedTotal"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/servedTotal"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/orderItemNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/OrderStatus"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/OrderStatus -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/OrderStatus">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Party"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Organization -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Organization">
+        <owl:equivalentClass rdf:resource="http://schema.org/Organization"/>
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/cnpj"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/legalName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Party -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Party">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Organization"/>
+                    <rdf:Description rdf:about="http://purl.org/ontomarket/Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/address"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Product"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Person -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Person">
+        <owl:equivalentClass rdf:resource="http://schema.org/Person"/>
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/cpf"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Product -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Product">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/offeredIn"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ontomarket/Bundle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/supplied"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/supplied"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ontomarket/Supplier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/subGroup"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/description"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/SubGroup"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Seller -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Seller">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/attends"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ontomarket/Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/memberOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ontomarket/Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/nick"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Supplier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/SubGroup -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/SubGroup">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/parent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ontomarket/Group"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.org/ontomarket/Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Supplier -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Supplier">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontomarket/Team -->
+
+    <owl:Class rdf:about="http://purl.org/ontomarket/Team">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Entity"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/member"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ontomarket/Seller"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontomarket/filial"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/Quantity -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Quantity"/>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/Unit -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Unit"/>
+    
+
+
+    <!-- http://schema.org/MonetaryAmount -->
+
+    <owl:Class rdf:about="http://schema.org/MonetaryAmount">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
+        <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/currency"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/value"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Organization -->
+
+    <owl:Class rdf:about="http://schema.org/Organization">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/PostalAddress -->
+
+    <owl:Class rdf:about="http://schema.org/PostalAddress">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/addressLocality"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/addressRegion"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/postOfficeBoxNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/postalCode"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/streetAddress"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/QuantitativeValue -->
+
+    <owl:Class rdf:about="http://schema.org/QuantitativeValue">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
+        <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/unitCode"/>
+                <owl:someValuesFrom rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/value"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Thing -->
+
+    <owl:Class rdf:about="http://schema.org/Thing"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontomarket/Party"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontomarket/unit/one -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ontomarket/unit/one">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <qudt:conversionMultiplier rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</qudt:conversionMultiplier>
+        <qudt:symbol>one</qudt:symbol>
+        <qudt:uneceCommonCode>C62</qudt:uneceCommonCode>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
