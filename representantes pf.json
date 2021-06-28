@@ -1,0 +1,401 @@
+{
+  "baseIRI": "http://purl.org/ontomarket/Seller/",
+  "namespaces": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "team": "http://purl.org/ontomarket/Team/",
+    "ontomkt": "http://purl.org/ontomarket/",
+    "schema": "https://schema.org/",
+    "person": "http://purl.org/ontomarket/Person/",
+    "owl": "http://www.w3.org/2002/07/owl#"
+  },
+  "subjectMappings": [
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "name"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Nome",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "foaf",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "nick"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Apelido",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "memberOf"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "team",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "columnName": "Cod Equipe",
+                "source": "column"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "address"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Seller/\"+cells[\"Cod.vend\"].value+\"/address\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "identifier"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Cod.vend",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "language": "raw"
+        },
+        "valueSource": {
+          "columnName": "Cod.vend",
+          "source": "column"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "ontomkt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Seller"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "streetAddress"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Rua",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "postOfficeBoxNumber"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Numero",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "postalCode"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "CEP",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "addressLocality"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Cidade",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "addressRegion"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "UF",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/\"+cells[\"Cod.vend\"].value+\"/address\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "PostalAddress"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "cpf"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "CPF",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "person",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "CPF",
+          "source": "column"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "ontomkt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Person"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "owl",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "sameAs"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "person",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "columnName": "CPF",
+                "source": "column"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "language": "raw"
+        },
+        "valueSource": {
+          "columnName": "Cod.vend",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    }
+  ]
+}

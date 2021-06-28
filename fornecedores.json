@@ -1,0 +1,371 @@
+{
+  "baseIRI": "http://purl.org/ontomarket/Supplier/",
+  "namespaces": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ontomkt": "http://purl.org/ontomarket/",
+    "schema": "https://schema.org/",
+    "org": "http://purl.org/ontomarket/Organization/",
+    "owl": "http://www.w3.org/2002/07/owl#"
+  },
+  "subjectMappings": [
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "name"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "FANTASIA",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "identifier"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "SEQFORNECEDOR",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "address"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Supplier/\"+cells[\"SEQFORNECEDOR\"].value+\"/address\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "language": "raw"
+        },
+        "valueSource": {
+          "columnName": "SEQFORNECEDOR",
+          "source": "column"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "ontomkt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Supplier"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "addressRegion"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "UF",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "addressLocality"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "CIDADE",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "streetAddress"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "RUA",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "postOfficeBoxNumber"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "NUMERO",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "postalCode"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "CEP",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Supplier/\"+cells[\"SEQFORNECEDOR\"].value+\"/address\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "PostalAddress"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "cnpj"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "CNPJ",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "legalName"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "NOMERAZAO",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "org",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "CNPJ",
+          "source": "column"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "ontomkt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Organization"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "owl",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "sameAs"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "org",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "columnName": "CNPJ",
+                "source": "column"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "language": "raw"
+        },
+        "valueSource": {
+          "columnName": "SEQFORNECEDOR",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    }
+  ]
+}

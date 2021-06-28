@@ -1,0 +1,1432 @@
+{
+  "baseIRI": "http://purl.org/ontomarket/",
+  "namespaces": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ontomkt": "http://purl.org/ontomarket/",
+    "schema": "http://schema.org/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "product": "http://purl.org/ontomarket/Product/",
+    "order": "http://purl.org/ontomarket/Order/"
+  },
+  "subjectMappings": [
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "requestedQuantity"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/requestedQuantity\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "servedQuantity"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/servedQuantity\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "requestedTotal"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/requestedTotal\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "servedTotal"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/servedTotal\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "profitability"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/profitability\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "profitMargin"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/profitMargin\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "weight"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/weight\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "orderItemNumber"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Item Pedido",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "bundle"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Product/\"+cells[\"Codigo Produto\"].value+\"/Bundle/\"+cells[\"Quantidade Embalagem\"].value",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "ontomkt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "OrderItem"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "value"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Quantidade Pedida",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "datatype_literal",
+                "datatype": {
+                  "transformation": {
+                    "expression": "xsd",
+                    "language": "prefix"
+                  },
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "decimal"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unitCode"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "ontomkt",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "unit/one"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "qudt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unit"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "ontomkt",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "unit/one"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/requestedQuantity\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "QuantitativeValue"
+          }
+        },
+        {
+          "transformation": {
+            "expression": "qudt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Quantity"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "value"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Quantidade Atendida",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "datatype_literal",
+                "datatype": {
+                  "transformation": {
+                    "expression": "xsd",
+                    "language": "prefix"
+                  },
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "decimal"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unitCode"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "ontomkt",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "unit/one"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "qudt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unit"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "ontomkt",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "unit/one"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/servedQuantity\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "QuantitativeValue"
+          }
+        },
+        {
+          "transformation": {
+            "expression": "qudt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Quantity"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "value"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Total Pedido",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "datatype_literal",
+                "datatype": {
+                  "transformation": {
+                    "expression": "xsd",
+                    "language": "prefix"
+                  },
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "decimal"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "currency"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "unit",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "BrazilianReal"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/requestedTotal\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "MonetaryAmount"
+          }
+        },
+        {
+          "transformation": {
+            "expression": "qudt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Quantity"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "value"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Total Atendido",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "datatype_literal",
+                "datatype": {
+                  "transformation": {
+                    "expression": "xsd",
+                    "language": "prefix"
+                  },
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "decimal"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "currency"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "unit",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "BrazilianReal"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/servedTotal\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "MonetaryAmount"
+          }
+        },
+        {
+          "transformation": {
+            "expression": "qudt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Quantity"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "value"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Lucratividade Total",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "datatype_literal",
+                "datatype": {
+                  "transformation": {
+                    "expression": "xsd",
+                    "language": "prefix"
+                  },
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "decimal"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "currency"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "unit",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "BrazilianReal"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/profitability\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "MonetaryAmount"
+          }
+        },
+        {
+          "transformation": {
+            "expression": "qudt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Quantity"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "value"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Lucrat.% Margem",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "datatype_literal",
+                "datatype": {
+                  "transformation": {
+                    "expression": "xsd",
+                    "language": "prefix"
+                  },
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "decimal"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unitCode"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "unit",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "PERCENT"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "qudt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unit"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "unit",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "PERCENT"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/profitMargin\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "QuantitativeValue"
+          }
+        },
+        {
+          "transformation": {
+            "expression": "qudt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Quantity"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "value"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Peso Bruto",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "datatype_literal",
+                "datatype": {
+                  "transformation": {
+                    "expression": "xsd",
+                    "language": "prefix"
+                  },
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "decimal"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unitCode"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "unit",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "KiloGM"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "qudt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unit"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "unit",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "KiloGM"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value+\"/weight\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "QuantitativeValue"
+          }
+        },
+        {
+          "transformation": {
+            "expression": "qudt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Quantity"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "orderItem"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Order/\"+cells[\"Pedido\"].value+\"/OrderItem/\"+cells[\"Item Pedido\"].value",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "order",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Pedido",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "product"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "product",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "columnName": "Codigo Produto",
+                "source": "column"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "bundleQuantity"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Product/\"+cells[\"Codigo Produto\"].value+\"/Bundle/\"+cells[\"Quantidade Embalagem\"].value+\"/bundleQuantity\"",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "name"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "cells[\"Codigo Produto\"].value+\"/\"+cells[\"Quantidade Embalagem\"].value",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "identifier"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "cells[\"Codigo Produto\"].value+\"/\"+cells[\"Quantidade Embalagem\"].value",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Product/\"+cells[\"Codigo Produto\"].value+\"/Bundle/\"+cells[\"Quantidade Embalagem\"].value",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "ontomkt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Bundle"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "value"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Quantidade Embalagem",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "datatype_literal",
+                "datatype": {
+                  "transformation": {
+                    "expression": "xsd",
+                    "language": "prefix"
+                  },
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "decimal"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "schema",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unitCode"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "ontomkt",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "unit/one"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        },
+        {
+          "property": {
+            "transformation": {
+              "expression": "qudt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "unit"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "ontomkt",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "source": "constant",
+                "constant": "unit/one"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "\"http://purl.org/ontomarket/Product/\"+cells[\"Codigo Produto\"].value+\"/Bundle/\"+cells[\"Quantidade Embalagem\"].value+\"/bundleQuantity\"",
+          "language": "grel"
+        },
+        "valueSource": {
+          "source": "row_index"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "schema",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "QuantitativeValue"
+          }
+        },
+        {
+          "transformation": {
+            "expression": "qudt",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "Quantity"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "ontomkt",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "offeredIn"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "\"http://purl.org/ontomarket/Product/\"+cells[\"Codigo Produto\"].value+\"/Bundle/\"+cells[\"Quantidade Embalagem\"].value",
+                "language": "grel"
+              },
+              "valueSource": {
+                "source": "row_index"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "product",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Codigo Produto",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    }
+  ]
+}
